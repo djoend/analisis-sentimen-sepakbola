@@ -120,91 +120,89 @@ elif page == "Penjelasan Project":
 # Dashboard
 elif page == "Dashboard":
     st.title("Dashboard")
-    st.write("Berikut adalah hasil analisis sentimen untuk beberapa pertandingan penting:")
-
-    # Pertandingan 14: Indonesia vs Arab Saudi
+    st.write("Berikut adalah hasil analisis sentimen untuk beberapa pertandingan penting:")    
     with st.expander("Indonesia vs Arab Saudi (19 November 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Arab Saudi - 19 November 2024")
-        st.image("assets/1.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/2.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/1.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/2.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 13: Indonesia vs Jepang
     with st.expander("Indonesia vs Jepang (15 November 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Jepang - 15 November 2024")
-        st.image("assets/3.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/4.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/3.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/4.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 12: China vs Indonesia
     with st.expander("China vs Indonesia (15 Oktober 2024)"):
-        st.write("Analisis Sentimen untuk pertandingan China vs Indonesia - 15 Oktober 2024")
-        st.image("assets/5.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/6.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.write("Analisis Sentimen untuk pertandingan China vs Indonesia - 15 Oktober 2024")        
+        st.image("assets/5.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/6.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 11: Bahrain vs Indonesia
     with st.expander("Bahrain vs Indonesia (10 Oktober 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Bahrain vs Indonesia - 10 Oktober 2024")
-        st.image("assets/7.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/8.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/7.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/8.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 10: Indonesia vs Australia
     with st.expander("Indonesia vs Australia (10 September 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Australia - 10 September 2024")
-        st.image("assets/9.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/10.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/9.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/10.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 9: Arab Saudi vs Indonesia 
     with st.expander("Arab Saudi vs Indonesia (6 September 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Arab Saudi vs Indonesia - 6 September 2024")
-        st.image("assets/11.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/12.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/11.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/12.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 8: Indonesia vs Filipina
     with st.expander("Indonesia vs Filipina (11 Juni 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Filipina - 11 Juni 2024")
-        st.image("assets/13.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/14.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/13.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/14.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 7: Indonesia vs Irak
     with st.expander("Indonesia vs Irak (6 Juni 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Irak - 6 Juni 2024")
-        st.image("assets/15.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/16.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/15.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/16.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 6: Vietnam vs Indonesia
     with st.expander("Vietnam vs Indonesia (26 Maret 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Vietnam vs Indonesia - 26 Maret 2024")
-        st.image("assets/17.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/18.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/17.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/18.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 5: Indonesia vs Vietnam
     with st.expander("Indonesia vs Vietnam (21 Maret 2024)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Vietnam - 21 Maret 2024")
-        st.image("assets/19.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/20.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/19.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/20.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 4: Filipina vs Indonesia
     with st.expander("Filipina vs Indonesia (21 November 2023)"):
         st.write("Analisis Sentimen untuk pertandingan Filipina vs Indonesia - 21 November 2023")
-        st.image("assets/21.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/22.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/21.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/22.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 3: Irak vs Indonesia 
     with st.expander("Irak vs Indonesia (16 November 2023)"):
         st.write("Analisis Sentimen untuk pertandingan Irak vs Indonesia - 16 November 2023")
-        st.image("assets/23.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/24.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/23.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/24.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 2: Brunei vs Indonesia
     with st.expander("Brunei vs Indonesia (17 Oktober 2023)"):
         st.write("Analisis Sentimen untuk pertandingan Brunei vs Indonesia - 17 Oktober 2023")
-        st.image("assets/25.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/26.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/25.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/26.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
     # Pertandingan 1: Indonesia vs Brunei
     with st.expander("Indonesia vs Brunei (12 Oktober 2023)"):
         st.write("Analisis Sentimen untuk pertandingan Indonesia vs Brunei - 12 Oktober 2023")
-        st.image("assets/27.png", caption="Grafik Sentimen", use_column_width=True)
-        st.image("assets/28.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_column_width=True)
+        st.image("assets/27.png", caption="Grafik Sentimen", use_container_width=True)
+        st.image("assets/28.png", caption="Word Cloud dan Top 10 Kata Sentimen", use_container_width=True)
 
 # Analisis Tren Sentimen
 elif page == "Analisis Tren Sentimen":
