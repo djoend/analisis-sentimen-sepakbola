@@ -321,18 +321,27 @@ elif page == "Analisis Sentimen":
                 else:
                     return prediksi if isinstance(prediksi, str) else label_encoder.inverse_transform([prediksi])[0]
                     
-            sentiment_label = tentukan_sentimen(skor_positif, skor_negatif, skor_netral, prediksi_model)
-
-            # Tampilkan hasil analisis
+            sentiment_label = tentukan_sentimen(skor_positif, skor_negatif, skor_netral, prediksi_model)            # Tampilkan hasil analisis dengan penjelasan detail
             if sentiment_label == 'Positif':
-                st.success(f"Hasil Analisis: Sentimen {sentiment_label} 😊")
-                st.write("Kalimat ini mengandung ungkapan positif atau dukungan.")
+                with st.success(f"Hasil Analisis: Sentimen {sentiment_label} 😊"):
+                    st.markdown("Kalimat ini mengandung ungkapan positif atau dukungan.")
             elif sentiment_label == 'Negatif':
-                st.error(f"Hasil Analisis: Sentimen {sentiment_label} 😔")
-                st.write("Kalimat ini mengandung kritik atau ungkapan negatif.")
+                with st.error(f"Hasil Analisis: Sentimen {sentiment_label} 😔"):
+                    st.markdown("Kalimat ini mengandung kritik atau ungkapan negatif.")
             else:
-                st.info(f"Hasil Analisis: Sentimen {sentiment_label} 😐")
-                st.write("Kalimat ini bersifat netral atau seimbang.")
+                with st.info(f"Hasil Analisis: Sentimen {sentiment_label} 😐"):
+                    st.markdown("Kalimat ini bersifat netral atau seimbang.")
+            
+            # Tampilkan skor detail
+            st.write("---")
+            st.write("Detail Analisis:")
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.metric("Skor Positif", skor_positif)
+            with col2:
+                st.metric("Skor Negatif", skor_negatif)
+            with col3:
+                st.metric("Skor Netral", skor_netral)
 
         except NotFittedError:
             st.error("Maaf, sistem analisis sedang tidak siap. Silakan coba beberapa saat lagi.")
