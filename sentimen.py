@@ -280,31 +280,26 @@ elif page == "Analisis Sentimen":
 
     st.title("Analisis Sentimen")
     
-    # Tambahan Deskripsi
-    st.subheader("Masukkan Kalimat, Temukan Sentimennya!")
+    st.subheader("Masukkan Kalimat untuk Analisis")
     st.write("""
-    Ingin tahu apakah sebuah kalimat mengandung sentimen positif, negatif, atau netral? 
-    Masukkan teks Anda, dan sistem kami akan mengklasifikasikan sentimen berdasarkan analisis.
+    Ingin mengetahui apakah sebuah komentar mengandung sentimen positif, negatif, atau netral? 
+    Masukkan teks Anda di bawah ini, dan sistem kami akan menganalisis sentimennya secara otomatis.
     
-    📊 **Cek sentimen Anda dengan cepat dan mudah!**
+    📊 **Analisis sentimen secara instan!**
     """)
-    
-    # Bagian Input dan Prediksi Tetap
-    st.write("Masukkan kalimat untuk memprediksi sentimen:")
-
 
     # Input kalimat dari pengguna
-    kalimat = st.text_input("Masukkan kalimat:")
+    kalimat = st.text_input("Ketik atau tempel kalimat di sini:")
 
     if kalimat:
         try:           
             kalimat_clean = kalimat.lower() 
-            # Hitung skor sentimen menggunakan kata kunci yang telah didefinisikan            
+            # Hitung skor sentimen menggunakan kata kunci
             sentiment_keywords = get_sentiment_keywords()
             kata_positif = sentiment_keywords['positif']
             kata_negatif = sentiment_keywords['negatif']
             kata_netral = sentiment_keywords['netral']
-              # Analisis sentimen berdasarkan kata kunci
+
             def hitung_skor_sentimen(teks, kata_kunci):
                 return sum(1 for kata in kata_kunci if kata in teks)
             
@@ -312,10 +307,10 @@ elif page == "Analisis Sentimen":
             skor_negatif = hitung_skor_sentimen(kalimat_clean, kata_negatif)
             skor_netral = hitung_skor_sentimen(kalimat_clean, kata_netral)
             
-            # Prediksi menggunakan model
+            # Analisis menggunakan model pembelajaran mesin
             kalimat_vectorized = loaded_vectorizer.transform([kalimat]).toarray()           
             prediksi_model = loaded_model.predict(kalimat_vectorized)[0]
-              # Tentukan sentimen berdasarkan gabungan rule-based dan model
+
             def tentukan_sentimen(skor_pos, skor_neg, skor_net, prediksi):
                 if skor_net > 0 and skor_pos == 0 and skor_neg == 0:
                     return 'Netral' 
@@ -328,16 +323,19 @@ elif page == "Analisis Sentimen":
                     
             sentiment_label = tentukan_sentimen(skor_positif, skor_negatif, skor_netral, prediksi_model)
 
-            # Tampilkan hasil dengan format yang lebih baik
+            # Tampilkan hasil analisis
             if sentiment_label == 'Positif':
-                st.success(f"Sentimen prediksi: {sentiment_label} 😊")
+                st.success(f"Hasil Analisis: Sentimen {sentiment_label} 😊")
+                st.write("Kalimat ini mengandung ungkapan positif atau dukungan.")
             elif sentiment_label == 'Negatif':
-                st.error(f"Sentimen prediksi: {sentiment_label} 😔")
+                st.error(f"Hasil Analisis: Sentimen {sentiment_label} 😔")
+                st.write("Kalimat ini mengandung kritik atau ungkapan negatif.")
             else:
-                st.info(f"Sentimen prediksi: {sentiment_label} 😐")
+                st.info(f"Hasil Analisis: Sentimen {sentiment_label} 😐")
+                st.write("Kalimat ini bersifat netral atau seimbang.")
 
         except NotFittedError:
-            st.error("Vectorizer belum terlatih dengan benar.")
+            st.error("Maaf, sistem analisis sedang tidak siap. Silakan coba beberapa saat lagi.")
 
 # Analisis dengan Dataset
 elif page == "Analisis dengan Dataset":
