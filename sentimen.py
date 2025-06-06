@@ -301,6 +301,7 @@ elif page == "Analisis Sentimen":
             kata_netral = sentiment_keywords['netral']
 
             def hitung_skor_sentimen(teks, kata_kunci):
+
                 return sum(1 for kata in kata_kunci if kata in teks)
             
             skor_positif = hitung_skor_sentimen(kalimat_clean, kata_positif)
@@ -320,17 +321,17 @@ elif page == "Analisis Sentimen":
                     return 'Negatif' 
                 else:
                     return prediksi if isinstance(prediksi, str) else label_encoder.inverse_transform([prediksi])[0]
-                    
-            sentiment_label = tentukan_sentimen(skor_positif, skor_negatif, skor_netral, prediksi_model)            # Tampilkan hasil analisis dengan penjelasan detail
+        
+            sentiment_label = tentukan_sentimen(skor_positif, skor_negatif, skor_netral, prediksi_model)           
             if sentiment_label == 'Positif':
                 with st.success(f"Hasil Analisis: Sentimen {sentiment_label} 😊"):
-                    st.markdown("Kalimat ini mengandung ungkapan positif atau dukungan.")
+                    pass
             elif sentiment_label == 'Negatif':
                 with st.error(f"Hasil Analisis: Sentimen {sentiment_label} 😔"):
-                    st.markdown("Kalimat ini mengandung kritik atau ungkapan negatif.")
+                    pass
             else:
                 with st.info(f"Hasil Analisis: Sentimen {sentiment_label} 😐"):
-                    st.markdown("Kalimat ini bersifat netral atau seimbang.")
+                    pass
             
             # Tampilkan skor detail
             st.write("---")
